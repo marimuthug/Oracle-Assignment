@@ -182,6 +182,7 @@
 		000A340719B19D660081182C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				00E0516519B1D87D00F4D98D /* WebserviceClient */,
 				000A340919B19EA60081182C /* LFUserDataModel.h */,
 				000A340A19B19EA60081182C /* LFUserDataModel.m */,
 			);
@@ -201,6 +202,13 @@
 				000A341119B19F4A0081182C /* LFAppConstatnts.h */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		00E0516519B1D87D00F4D98D /* WebserviceClient */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = WebserviceClient;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -510,6 +518,7 @@
 				000A33FF19B19D030081182C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		000A340019B19D030081182C /* Build configuration list for PBXNativeTarget "LocationFetchPOCTests" */ = {
 			isa = XCConfigurationList;
@@ -518,6 +527,7 @@
 				000A340219B19D030081182C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

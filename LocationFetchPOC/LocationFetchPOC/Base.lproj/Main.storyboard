@@ -66,8 +66,8 @@
                     </view>
                     <connections>
                         <outlet property="lastUpdatedLabel" destination="dXe-mb-KpD" id="f3H-Dz-REN"/>
-                        <outlet property="latLongValueLabel" destination="ddi-43-jqb" id="lgI-XI-xXy"/>
                         <outlet property="locationTipLabel" destination="bMD-QS-y9l" id="L3r-BK-xak"/>
+                        <outlet property="locationValueLabel" destination="ddi-43-jqb" id="8Wu-s2-AZu"/>
                         <outlet property="nameTipLabel" destination="VWK-xx-LWo" id="PpV-Q8-JPl"/>
                         <outlet property="nameTxtField" destination="ISM-QS-2kI" id="Umw-vG-wX5"/>
                     </connections>

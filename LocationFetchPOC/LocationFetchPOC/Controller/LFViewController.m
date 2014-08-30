@@ -15,7 +15,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *lastUpdatedLabel;
 @property (weak, nonatomic) IBOutlet UILabel *nameTipLabel;
 @property (weak, nonatomic) IBOutlet UILabel *locationTipLabel;
-@property (weak, nonatomic) IBOutlet UILabel *latLongValueLabel;
+@property (weak, nonatomic) IBOutlet UILabel *locationValueLabel;
+
+@property (strong, nonatomic) CLLocationManager *locationManager;
 
 - (IBAction)btnActionSubmit:(id)sender;
 
@@ -69,8 +71,46 @@
     
     [self.nameTxtField setText:[LFUserDataModel getName]];
     
+    [self requestForCurrentLocation];
+    
 }
 
+
+#pragma mark Location Manager Delegate
+
+
+-(void)requestForCurrentLocation
+{
+    self.locationManager = [[CLLocationManager alloc] init];
+    _locationManager.delegate = self;
+    _locationManager.distanceFilter = kCLDistanceFilterNone;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    [self.locationManager startUpdatingLocation];
+    
+}
+
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    
+    CLLocation *currentLocation = [locations objectAtIndex:0];
+    
+    NSString *updatedLocation = [NSString stringWithFormat:@"%f,%f",currentLocation.coordinate.latitude, currentLocation.coordinate.longitude];
+    [self.locationValueLabel setText:updatedLocation];
+    
+    NSLog(@"%@",updatedLocation);
+  
+}
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    NSLog(@"Error %@", [error localizedDescription]);
+}
+
+- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
+{
+    NSLog(@"status %d", status);
+}
 
 
 #pragma mark Textfield delegates
