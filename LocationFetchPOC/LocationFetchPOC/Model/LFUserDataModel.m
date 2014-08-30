@@ -10,17 +10,15 @@
 
 @implementation LFUserDataModel
 
--(NSString*)getName{
-    NSString *nameValue = [[NSUserDefaults standardUserDefaults] valueForKey:NAME_KEY];
++(NSString*)getName{
+    NSString *nameValue = [[NSUserDefaults standardUserDefaults] objectForKey:NAME_KEY];
     if (nameValue) {
         return nameValue;
     }
     return DEFAULT_NAME_VALUE;
 }
 
-
-
--(void)setName:(NSString*)passonNameValue{
-    [[NSUserDefaults standardUserDefaults]  setValue:passonNameValue forKey:DEFAULT_NAME_VALUE];
++(void)setName:(NSString*)passonNameValue{
+    [[NSUserDefaults standardUserDefaults]  setObject:passonNameValue forKey:NAME_KEY];
 }
 @end

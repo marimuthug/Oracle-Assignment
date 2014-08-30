@@ -15,13 +15,13 @@
  Args   : NA
  Return : Name value as String
  */
--(NSString*)getName;
++(NSString*)getName;
 
 /*
  Desc   : method to set the passon value to the user detaults for the name key
  Args   : namevalue as String
  Return : NA
  */
--(void)setName:(NSString*)passonNameValue;
++(void)setName:(NSString*)passonNameValue;
 
 @end

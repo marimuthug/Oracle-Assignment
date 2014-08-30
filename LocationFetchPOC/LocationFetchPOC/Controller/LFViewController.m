@@ -7,6 +7,7 @@
 //
 
 #import "LFViewController.h"
+#import "LFUserDataModel.h"
 
 @interface LFViewController ()
 
@@ -65,6 +66,9 @@
     [self.nameTipLabel setAttributedText:attributeStringForNameTip];
     [self.locationTipLabel setAttributedText:attributeStringForLocationTip];
     
+    
+    [self.nameTxtField setText:[LFUserDataModel getName]];
+    
 }
 
 
@@ -76,6 +80,12 @@
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField{
+    
+    NSString *extractedNameValue = [[self.nameTxtField text] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    if([extractedNameValue length] > 0){
+        [LFUserDataModel setName:extractedNameValue];
+    }
+    
     
 }
 
