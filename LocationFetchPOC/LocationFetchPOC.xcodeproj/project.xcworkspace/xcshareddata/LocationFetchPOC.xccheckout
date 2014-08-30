@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>7188CD6D-4273-437A-92D8-FF08A6714775</string>
+	<key>IDESourceControlProjectName</key>
+	<string>LocationFetchPOC</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>63BC6FC0-C448-4F08-8B81-5BA0904F21DC</key>
+		<string>https://github.com/marimuthug/Oracle-Assignment.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>LocationFetchPOC/LocationFetchPOC.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>63BC6FC0-C448-4F08-8B81-5BA0904F21DC</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/marimuthug/Oracle-Assignment.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>63BC6FC0-C448-4F08-8B81-5BA0904F21DC</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>63BC6FC0-C448-4F08-8B81-5BA0904F21DC</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Oracle Assignment</string>
+		</dict>
+	</array>
+</dict>
+</plist>
