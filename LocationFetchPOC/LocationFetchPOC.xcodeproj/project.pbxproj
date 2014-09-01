@@ -19,7 +19,6 @@
 		000A33EF19B19D030081182C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 000A33CE19B19D030081182C /* Foundation.framework */; };
 		000A33F019B19D030081182C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 000A33D219B19D030081182C /* UIKit.framework */; };
 		000A33F819B19D030081182C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 000A33F619B19D030081182C /* InfoPlist.strings */; };
-		000A33FA19B19D030081182C /* LocationFetchPOCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 000A33F919B19D030081182C /* LocationFetchPOCTests.m */; };
 		000A340819B19D660081182C /* LFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 000A340519B19D660081182C /* LFViewController.m */; };
 		000A340B19B19EA60081182C /* LFUserDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 000A340A19B19EA60081182C /* LFUserDataModel.m */; };
 		000A341319B1A4FC0081182C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 000A341219B1A4FC0081182C /* CoreLocation.framework */; };
@@ -32,6 +31,9 @@
 		0083B7F319B4DFED007F254F /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 0083B7E819B4DFED007F254F /* AFURLRequestSerialization.m */; };
 		0083B7F419B4DFED007F254F /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 0083B7EA19B4DFED007F254F /* AFURLResponseSerialization.m */; };
 		0083B7F519B4DFED007F254F /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0083B7EC19B4DFED007F254F /* AFURLSessionManager.m */; };
+		0083B7F719B4F6B6007F254F /* LocationFetchPOCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0083B7F619B4F6B6007F254F /* LocationFetchPOCTests.m */; };
+		0083B7F919B4F6C3007F254F /* LFUserDataModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0083B7F819B4F6C3007F254F /* LFUserDataModelTests.m */; };
+		0083B7FD19B4F80A007F254F /* LFLatLongUpdateServiceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0083B7FC19B4F80A007F254F /* LFLatLongUpdateServiceHelper.m */; };
 		00E0516819B1DE2400F4D98D /* LFWebServiceClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E0516719B1DE2400F4D98D /* LFWebServiceClient.m */; };
 /* End PBXBuildFile section */
 
@@ -62,7 +64,6 @@
 		000A33ED19B19D030081182C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		000A33F519B19D030081182C /* LocationFetchPOCTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LocationFetchPOCTests-Info.plist"; sourceTree = "<group>"; };
 		000A33F719B19D030081182C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		000A33F919B19D030081182C /* LocationFetchPOCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationFetchPOCTests.m; sourceTree = "<group>"; };
 		000A340419B19D660081182C /* LFViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFViewController.h; sourceTree = "<group>"; };
 		000A340519B19D660081182C /* LFViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFViewController.m; sourceTree = "<group>"; };
 		000A340919B19EA60081182C /* LFUserDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFUserDataModel.h; sourceTree = "<group>"; };
@@ -88,6 +89,10 @@
 		0083B7EA19B4DFED007F254F /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
 		0083B7EB19B4DFED007F254F /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
 		0083B7EC19B4DFED007F254F /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+		0083B7F619B4F6B6007F254F /* LocationFetchPOCTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationFetchPOCTests.m; sourceTree = "<group>"; };
+		0083B7F819B4F6C3007F254F /* LFUserDataModelTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFUserDataModelTests.m; sourceTree = "<group>"; };
+		0083B7FB19B4F80A007F254F /* LFLatLongUpdateServiceHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFLatLongUpdateServiceHelper.h; sourceTree = "<group>"; };
+		0083B7FC19B4F80A007F254F /* LFLatLongUpdateServiceHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFLatLongUpdateServiceHelper.m; sourceTree = "<group>"; };
 		00E0516619B1DE2400F4D98D /* LFWebServiceClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFWebServiceClient.h; sourceTree = "<group>"; };
 		00E0516719B1DE2400F4D98D /* LFWebServiceClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFWebServiceClient.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -178,7 +183,8 @@
 		000A33F319B19D030081182C /* LocationFetchPOCTests */ = {
 			isa = PBXGroup;
 			children = (
-				000A33F919B19D030081182C /* LocationFetchPOCTests.m */,
+				0083B7F819B4F6C3007F254F /* LFUserDataModelTests.m */,
+				0083B7F619B4F6B6007F254F /* LocationFetchPOCTests.m */,
 				000A33F419B19D030081182C /* Supporting Files */,
 			);
 			path = LocationFetchPOCTests;
@@ -213,6 +219,7 @@
 		000A340719B19D660081182C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0083B7FA19B4F7EA007F254F /* WebServiceHelper */,
 				00E0516519B1D87D00F4D98D /* WebserviceClient */,
 				000A340919B19EA60081182C /* LFUserDataModel.h */,
 				000A340A19B19EA60081182C /* LFUserDataModel.m */,
@@ -260,6 +267,15 @@
 				0083B7EC19B4DFED007F254F /* AFURLSessionManager.m */,
 			);
 			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		0083B7FA19B4F7EA007F254F /* WebServiceHelper */ = {
+			isa = PBXGroup;
+			children = (
+				0083B7FB19B4F80A007F254F /* LFLatLongUpdateServiceHelper.h */,
+				0083B7FC19B4F80A007F254F /* LFLatLongUpdateServiceHelper.m */,
+			);
+			path = WebServiceHelper;
 			sourceTree = "<group>";
 		};
 		00E0516519B1D87D00F4D98D /* WebserviceClient */ = {
@@ -382,6 +398,7 @@
 				0083B7F119B4DFED007F254F /* AFSecurityPolicy.m in Sources */,
 				000A33DB19B19D030081182C /* main.m in Sources */,
 				000A340819B19D660081182C /* LFViewController.m in Sources */,
+				0083B7FD19B4F80A007F254F /* LFLatLongUpdateServiceHelper.m in Sources */,
 				0083B7EF19B4DFED007F254F /* AFHTTPSessionManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -390,7 +407,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				000A33FA19B19D030081182C /* LocationFetchPOCTests.m in Sources */,
+				0083B7F919B4F6C3007F254F /* LFUserDataModelTests.m in Sources */,
+				0083B7F719B4F6B6007F254F /* LocationFetchPOCTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

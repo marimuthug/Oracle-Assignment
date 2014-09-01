@@ -24,4 +24,32 @@
  */
 +(void)setName:(NSString*)passonNameValue;
 
+/*
+ Desc   : method to get the value from the user detaults for the latitude key
+ Args   : NA
+ Return : Latitude value as String
+ */
++(NSString*)getLatitude;
+
+/*
+ Desc   : method to set the passon value to the user detaults for the latitude key
+ Args   : latitudevalue as String
+ Return : NA
+ */
++(void)setLatitude:(NSString*)passonLatValue;
+
+/*
+ Desc   : method to get the value from the user detaults for the longitude key
+ Args   : NA
+ Return : Name value as String
+ */
++(NSString*)getLongitude;
+
+/*
+ Desc   : method to set the passon value to the user detaults for the longitude key
+ Args   : longitudevalue as String
+ Return : NA
+ */
++(void)setLongitude:(NSString*)passonLongValue;
+
 @end

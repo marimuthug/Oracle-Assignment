@@ -19,19 +19,28 @@
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
-    NSURLCredential *credential = [NSURLCredential credentialWithUser:@"marimuthu" password:@"phil53" persistence:NSURLCredentialPersistenceNone];
-    NSMutableURLRequest *request = [manager.requestSerializer requestWithMethod:methodType URLString:url    parameters:params error:NULL];
+    // set up credentials for basic authetication
+    
+    NSURLCredential *credential = [NSURLCredential credentialWithUser:SEVICE_AUTH_USERNAME password:SEVICE_AUTH_PASSWORD persistence:NSURLCredentialPersistenceNone];
+    
+    // prepare web service request
+    NSMutableURLRequest *request = [manager.requestSerializer
+                                    requestWithMethod:methodType
+                                    URLString:url
+                                    parameters:params
+                                    error:NULL];
+    
+    // create operation wih url request and add into operation queue for execution
     
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     [operation setCredential:credential];
     [operation setResponseSerializer:[AFJSONResponseSerializer alloc]];
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         successHandler(responseObject);
-        NSLog(@"Success: %@", responseObject);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         failureHandler(error);
-        NSLog(@"Failure: %@", error);
     }];
+    
     [manager.operationQueue addOperation:operation];
 }
 @end
