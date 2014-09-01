@@ -45,7 +45,7 @@
     
 }
 
-#pragma mark 
+#pragma mark
 
 
 // method to prepare and do the UI presentation
@@ -56,21 +56,24 @@
     
     NSMutableAttributedString *attributeStringForNameTip = [[NSMutableAttributedString alloc] initWithString:[self.nameTipLabel text]];
     [attributeStringForNameTip addAttribute:NSUnderlineStyleAttributeName
-                            value:[NSNumber numberWithInt:1]
-                            range:(NSRange){0,[attributeStringForNameTip length]}];
+                                      value:[NSNumber numberWithInt:1]
+                                      range:(NSRange){0,[attributeStringForNameTip length]}];
     
     NSMutableAttributedString *attributeStringForLocationTip = [[NSMutableAttributedString alloc] initWithString:[self.locationTipLabel text]];
     [attributeStringForLocationTip addAttribute:NSUnderlineStyleAttributeName
-                                      value:[NSNumber numberWithInt:1]
-                                      range:(NSRange){0,[attributeStringForLocationTip length]}];
+                                          value:[NSNumber numberWithInt:1]
+                                          range:(NSRange){0,[attributeStringForLocationTip length]}];
     
     
     [self.nameTipLabel setAttributedText:attributeStringForNameTip];
     [self.locationTipLabel setAttributedText:attributeStringForLocationTip];
     
     
+    // update name textfield as per user defaults value
     [self.nameTxtField setText:[LFUserDataModel getName]];
     
+    
+    // start loction service to fetch the location data
     [self requestForCurrentLocation];
     
 }
@@ -82,8 +85,8 @@
 -(void)requestForCurrentLocation
 {
     self.locationManager = [[CLLocationManager alloc] init];
-    _locationManager.delegate = self;
-    _locationManager.distanceFilter = kCLDistanceFilterNone;
+    self.locationManager.delegate = self;
+    self.locationManager.distanceFilter = kCLDistanceFilterNone;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     [self.locationManager startUpdatingLocation];
     
@@ -99,7 +102,7 @@
     [self.locationValueLabel setText:updatedLocation];
     
     NSLog(@"%@",updatedLocation);
-  
+    
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
