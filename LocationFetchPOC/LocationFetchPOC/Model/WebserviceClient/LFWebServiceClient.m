@@ -7,7 +7,8 @@
 //
 
 #import "LFWebServiceClient.h"
-
+#import "AFHTTPRequestOperationManager.h"
+#import "AFHTTPRequestOperation.h"
 
 
 @implementation LFWebServiceClient
