@@ -23,6 +23,7 @@
 
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *serviceActivityIndicator;
+@property (weak, nonatomic) IBOutlet UIButton *submitBtn;
 
 - (IBAction)btnActionSubmit:(id)sender;
 
@@ -98,10 +99,8 @@
     
     // start loction service to fetch the location data
     [self requestForCurrentLocation];
-    
-    [self.serviceActivityIndicator startAnimating];
 
-    
+    [self.submitBtn setEnabled:NO];
 }
 
 
@@ -117,11 +116,20 @@
 
 // method to update last updated label for every second
 -(void)updateLastUpdatedLabel:(NSTimer *)timer{
-    if ([LFUserDataModel getLastUpdatedTimestamp]) {
-        NSString *ago = [[LFUserDataModel getLastUpdatedTimestamp] timeAgo];
-        [self.lastUpdatedLabel setText:[NSString stringWithFormat:@"%@",ago]];
-    }
+
+        NSString *relativeTime = [[LFUserDataModel getLastUpdatedTimestamp] timeAgo];
+        [self.lastUpdatedLabel setText:[NSString stringWithFormat:@"Last submitted %@",relativeTime]];
+
     
+}
+
+
+-(void)updateNameValueinUserDataModel:(NSString*)nameValue{
+    NSString *extractedNameValue = [nameValue stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    if([extractedNameValue length] > 0){
+        [LFUserDataModel setName:extractedNameValue];
+    }
+ 
 }
 
 #pragma mark Location Manager Delegate
@@ -135,6 +143,15 @@
     
     [LFUserDataModel setLatitude:[NSString stringWithFormat:@"%f",currentLocation.coordinate.latitude]];
     [LFUserDataModel setLongitude:[NSString stringWithFormat:@"%f",currentLocation.coordinate.longitude]];
+    
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:FIRST_LAT_LON_UPDATE_DONE]) {
+        // do update lat and long in server
+        [LFLatLongUpdateServiceHelper updateLatAndLongInServer];
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:FIRST_LAT_LON_UPDATE_DONE];
+        
+        [self.serviceActivityIndicator startAnimating];
+        [self.submitBtn setEnabled:NO];
+    }
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
@@ -142,6 +159,9 @@
 }
 
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
+    if (status==kCLAuthorizationStatusDenied) {
+        [self.locationValueLabel setText:@"Enable location service to submit."];
+    }
     NSLog(@"status %d", status);
 }
 
@@ -154,17 +174,24 @@
 
 - (void)textFieldDidEndEditing:(UITextField *)textField{
     
-    NSString *extractedNameValue = [[self.nameTxtField text] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    if([extractedNameValue length] > 0){
-        [LFUserDataModel setName:extractedNameValue];
-    }
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
     [textField resignFirstResponder];
+   
     return YES;
 }
 
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
+    if ([string length]>0) {
+            [self updateNameValueinUserDataModel:[[textField text] stringByAppendingString:string]];
+    }
+    else {
+        [self updateNameValueinUserDataModel:[textField text]];
+    }
+
+    return YES;
+}
 
 #pragma mark button actions
 
@@ -175,14 +202,13 @@
     [LFLatLongUpdateServiceHelper updateLatAndLongInServer];
     
     //start activity indicator
-    [self.serviceActivityIndicator setHidden:NO];
     [self.serviceActivityIndicator startAnimating];
+    [self.submitBtn setEnabled:NO];
 }
 
 
 #pragma mark service response notification handler methods
 -(void)handleSuccessUpdate:(NSNotification*)notification{
-    
     // update current time stamp as recent update and save it in userdefaults
     NSDate *currentDate = [NSDate date];
     [LFUserDataModel setLastUpdatedTimestamp:currentDate];
@@ -191,7 +217,7 @@
     NSString *relativeTime = [[LFUserDataModel getLastUpdatedTimestamp] timeAgo];
     
     // update the UI and present to user
-    [self.lastUpdatedLabel setText:[NSString stringWithFormat:@"%@",relativeTime]];
+    [self.lastUpdatedLabel setText:[NSString stringWithFormat:@"Last submitted %@",relativeTime]];
     [self.lastUpdatedLabel setHidden:NO];
 
     // trigger updateing label once per second
@@ -200,11 +226,12 @@
     //stop activity indicator
     [self.serviceActivityIndicator setHidden:YES];
     [self.serviceActivityIndicator stopAnimating];
+    [self.submitBtn setEnabled:YES];
     
 }
 
 -(void)handleErrorUpdate:(NSNotification*)notification{
-    
+
     NSDictionary *userInfo = notification.userInfo;
     NSError *error = [userInfo objectForKey:@"responseError"];
     
@@ -224,6 +251,7 @@
     //stop activity indicator
     [self.serviceActivityIndicator setHidden:YES];
     [self.serviceActivityIndicator stopAnimating];
+    [self.submitBtn setEnabled:YES];
     
 }
 

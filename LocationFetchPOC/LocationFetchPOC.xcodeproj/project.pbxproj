@@ -31,13 +31,15 @@
 		0083B7F419B4DFED007F254F /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 0083B7EA19B4DFED007F254F /* AFURLResponseSerialization.m */; };
 		0083B7F519B4DFED007F254F /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0083B7EC19B4DFED007F254F /* AFURLSessionManager.m */; };
 		0083B7F719B4F6B6007F254F /* LocationFetchPOCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0083B7F619B4F6B6007F254F /* LocationFetchPOCTests.m */; };
-		0083B7F919B4F6C3007F254F /* LFUserDataModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0083B7F819B4F6C3007F254F /* LFUserDataModelTests.m */; };
 		0083B7FD19B4F80A007F254F /* LFLatLongUpdateServiceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0083B7FC19B4F80A007F254F /* LFLatLongUpdateServiceHelper.m */; };
 		00E0516819B1DE2400F4D98D /* LFWebServiceClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E0516719B1DE2400F4D98D /* LFWebServiceClient.m */; };
 		4C52054819B5DAB10023ADC7 /* NSDate+TimeAgo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C52054719B5DAB10023ADC7 /* NSDate+TimeAgo.m */; };
 		4C52054A19B5DCA50023ADC7 /* NSDateTimeAgo.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4C52054919B5DCA50023ADC7 /* NSDateTimeAgo.bundle */; };
 		4C52054D19B5E19A0023ADC7 /* LFAppUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C52054C19B5E19A0023ADC7 /* LFAppUtils.m */; };
 		4CC52D5619B594A500C9B64D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CC52D5419B594A500C9B64D /* Main.storyboard */; };
+		4CE2DB7819B5F5E400D44C01 /* LFUserDataModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CE2DB7719B5F5E400D44C01 /* LFUserDataModelTests.m */; };
+		4CF80ADE19B605510031F2C7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4CF80ADC19B605510031F2C7 /* InfoPlist.strings */; };
+		4CF80AE119B605710031F2C7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4CF80ADF19B605710031F2C7 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,7 +94,6 @@
 		0083B7EB19B4DFED007F254F /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
 		0083B7EC19B4DFED007F254F /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
 		0083B7F619B4F6B6007F254F /* LocationFetchPOCTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationFetchPOCTests.m; sourceTree = "<group>"; };
-		0083B7F819B4F6C3007F254F /* LFUserDataModelTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFUserDataModelTests.m; sourceTree = "<group>"; };
 		0083B7FB19B4F80A007F254F /* LFLatLongUpdateServiceHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFLatLongUpdateServiceHelper.h; sourceTree = "<group>"; };
 		0083B7FC19B4F80A007F254F /* LFLatLongUpdateServiceHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFLatLongUpdateServiceHelper.m; sourceTree = "<group>"; };
 		00E0516619B1DE2400F4D98D /* LFWebServiceClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFWebServiceClient.h; sourceTree = "<group>"; };
@@ -103,6 +104,9 @@
 		4C52054B19B5E19A0023ADC7 /* LFAppUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFAppUtils.h; sourceTree = "<group>"; };
 		4C52054C19B5E19A0023ADC7 /* LFAppUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFAppUtils.m; sourceTree = "<group>"; };
 		4CC52D5519B594A500C9B64D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LocationFetchPOC/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
+		4CE2DB7719B5F5E400D44C01 /* LFUserDataModelTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFUserDataModelTests.m; sourceTree = "<group>"; };
+		4CF80ADD19B605510031F2C7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfoPlist.strings; sourceTree = "<group>"; };
+		4CF80AE019B605710031F2C7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +184,7 @@
 		000A33D519B19D030081182C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4CF80ADB19B605510031F2C7 /* en.lproj */,
 				000A33D619B19D030081182C /* LocationFetchPOC-Info.plist */,
 				000A33D719B19D030081182C /* InfoPlist.strings */,
 				000A33DA19B19D030081182C /* main.m */,
@@ -191,7 +196,7 @@
 		000A33F319B19D030081182C /* LocationFetchPOCTests */ = {
 			isa = PBXGroup;
 			children = (
-				0083B7F819B4F6C3007F254F /* LFUserDataModelTests.m */,
+				4CE2DB7719B5F5E400D44C01 /* LFUserDataModelTests.m */,
 				0083B7F619B4F6B6007F254F /* LocationFetchPOCTests.m */,
 				000A33F419B19D030081182C /* Supporting Files */,
 			);
@@ -308,6 +313,15 @@
 			path = RelativeTime;
 			sourceTree = "<group>";
 		};
+		4CF80ADB19B605510031F2C7 /* en.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				4CF80ADC19B605510031F2C7 /* InfoPlist.strings */,
+				4CF80ADF19B605710031F2C7 /* Localizable.strings */,
+			);
+			path = en.lproj;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -386,9 +400,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CC52D5619B594A500C9B64D /* Main.storyboard in Resources */,
+				4CF80AE119B605710031F2C7 /* Localizable.strings in Resources */,
 				4C52054A19B5DCA50023ADC7 /* NSDateTimeAgo.bundle in Resources */,
 				000A33E719B19D030081182C /* Images.xcassets in Resources */,
 				000A33D919B19D030081182C /* InfoPlist.strings in Resources */,
+				4CF80ADE19B605510031F2C7 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,7 +447,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0083B7F919B4F6C3007F254F /* LFUserDataModelTests.m in Sources */,
+				4CE2DB7819B5F5E400D44C01 /* LFUserDataModelTests.m in Sources */,
 				0083B7F719B4F6B6007F254F /* LocationFetchPOCTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -471,6 +487,22 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
+		4CF80ADC19B605510031F2C7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4CF80ADD19B605510031F2C7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4CF80ADF19B605710031F2C7 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4CF80AE019B605710031F2C7 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -490,7 +522,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Photon Infotech Inc.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Photon Infotech Inc.";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -508,7 +541,9 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "583F65D1-2033-426E-A7D5-1E6C1C51D196";
 				SDKROOT = iphoneos;
+				VALID_ARCHS = "arm64 armv7 armv7s i386";
 			};
 			name = Debug;
 		};
@@ -528,7 +563,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Photon Infotech Inc.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Photon Infotech Inc.";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -539,8 +575,10 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PROVISIONING_PROFILE = "583F65D1-2033-426E-A7D5-1E6C1C51D196";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "arm64 armv7 armv7s i386";
 			};
 			name = Release;
 		};
@@ -553,6 +591,7 @@
 				GCC_PREFIX_HEADER = "LocationFetchPOC/LocationFetchPOC-Prefix.pch";
 				INFOPLIST_FILE = "LocationFetchPOC/LocationFetchPOC-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "arm64 armv7 armv7s i386";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -566,6 +605,7 @@
 				GCC_PREFIX_HEADER = "LocationFetchPOC/LocationFetchPOC-Prefix.pch";
 				INFOPLIST_FILE = "LocationFetchPOC/LocationFetchPOC-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "arm64 armv7 armv7s i386";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -14,8 +14,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // do update lat and long in server
-    [LFLatLongUpdateServiceHelper updateLatAndLongInServer];
+    
+    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:FIRST_LAT_LON_UPDATE_DONE];
     
     // Override point for customization after application launch.
     return YES;
@@ -29,7 +29,15 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
+    UIApplication *app = [UIApplication sharedApplication];
+    __block UIBackgroundTaskIdentifier bgTask = 0;
+    bgTask = [app beginBackgroundTaskWithExpirationHandler:^{
+        
+        [app endBackgroundTask:bgTask];
+        bgTask = UIBackgroundTaskInvalid;
+    }];
     [LFLatLongUpdateServiceHelper updateLatAndLongInServer];
+    
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }

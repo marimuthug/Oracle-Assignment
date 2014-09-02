@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  LocationFetchPOC
+
+  Created by Marimuthu on 02/09/14.
+  Copyright (c) 2014 Marimuthu Govindasamy. All rights reserved.
+*/
+
+"NO_INTERNET_CONNECTION_ERROR" = "Please check your internet connectivity and try again.";
+"TIME_OUT_ERROR" = "Service time out .Please try again.";
+"UNKNOWN_ERROR" = "Something went wrong while updating to server.Please try again";

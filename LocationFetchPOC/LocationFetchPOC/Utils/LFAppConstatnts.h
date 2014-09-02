@@ -17,6 +17,7 @@
 #define LATITUDE_KEY @"latitude"
 #define LONGITUDE_KEY @"logitude"
 #define LAST_UPDATED_TIMESTAMP_KEY @"lastUpdatedTimestamp"
+#define FIRST_LAT_LON_UPDATE_DONE @"FIRST_LAT_LON_UPDATE_DONE"
 
 
 // webservice related constants
@@ -34,8 +35,9 @@
 
 
 //service response constants
-#define NO_INTERNET_CONNECTION_ERROR @"Please check your internet connectivity and try again."
-#define TIME_OUT_ERROR @"Service time out .Please try again."
-#define UNKNOWN_ERROR @"Something went wrong while updating to server.Please try again"
+//Please check your internet connectivity and try again."
+#define NO_INTERNET_CONNECTION_ERROR @"NO_INTERNET_CONNECTION_ERROR"
+#define TIME_OUT_ERROR @"TIME_OUT_ERROR"
+#define UNKNOWN_ERROR @"UNKNOWN_ERROR"
 
 #endif

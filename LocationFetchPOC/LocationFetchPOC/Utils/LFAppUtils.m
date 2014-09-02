@@ -10,14 +10,16 @@
 
 @implementation LFAppUtils
 +(NSString*)errorDescription:(NSError*)error{
-    if (([error code] == kCFURLErrorCannotConnectToHost) || ([error code] == kCFURLErrorTimedOut) || ([error code] == kCFURLErrorBadURL) || ([error code] == kCFURLErrorUnsupportedURL) || ([error code] == kCFURLErrorCannotFindHost) || [error code] == kCFURLErrorNotConnectedToInternet || [error code] == kCFURLErrorNetworkConnectionLost) {
-        if (([error code]==kCFURLErrorNetworkConnectionLost) | kCFURLErrorNotConnectedToInternet) {
-            return NO_INTERNET_CONNECTION_ERROR ;
-        }
-        else if ([error code] == kCFURLErrorTimedOut){
-            return TIME_OUT_ERROR;
-        }
+
+    if ([error code] == kCFURLErrorNotConnectedToInternet ) {
+        return NSLocalizedString(NO_INTERNET_CONNECTION_ERROR, nil) ;
     }
-    return UNKNOWN_ERROR;
+    else if ( [error code] == kCFURLErrorTimedOut){
+         return NSLocalizedString(TIME_OUT_ERROR, nil) ;
+    }
+    else{
+       return NSLocalizedString(UNKNOWN_ERROR, nil) ;
+    }
+    
 }
 @end
