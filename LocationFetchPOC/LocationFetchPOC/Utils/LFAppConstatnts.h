@@ -12,7 +12,7 @@
 
 #define DEFAULT_NAME_VALUE @"John Doe"
 
-// user default saving keys
+// user default  keys
 #define NAME_KEY @"name"
 #define LATITUDE_KEY @"latitude"
 #define LONGITUDE_KEY @"logitude"
@@ -35,7 +35,6 @@
 
 
 //service response constants
-//Please check your internet connectivity and try again."
 #define NO_INTERNET_CONNECTION_ERROR @"NO_INTERNET_CONNECTION_ERROR"
 #define TIME_OUT_ERROR @"TIME_OUT_ERROR"
 #define UNKNOWN_ERROR @"UNKNOWN_ERROR"
