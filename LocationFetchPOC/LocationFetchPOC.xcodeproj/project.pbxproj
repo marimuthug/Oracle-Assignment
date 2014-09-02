@@ -13,7 +13,6 @@
 		000A33D919B19D030081182C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 000A33D719B19D030081182C /* InfoPlist.strings */; };
 		000A33DB19B19D030081182C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 000A33DA19B19D030081182C /* main.m */; };
 		000A33DF19B19D030081182C /* LFAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 000A33DE19B19D030081182C /* LFAppDelegate.m */; };
-		000A33E219B19D030081182C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 000A33E019B19D030081182C /* Main.storyboard */; };
 		000A33E719B19D030081182C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 000A33E619B19D030081182C /* Images.xcassets */; };
 		000A33EE19B19D030081182C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 000A33ED19B19D030081182C /* XCTest.framework */; };
 		000A33EF19B19D030081182C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 000A33CE19B19D030081182C /* Foundation.framework */; };
@@ -35,6 +34,10 @@
 		0083B7F919B4F6C3007F254F /* LFUserDataModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0083B7F819B4F6C3007F254F /* LFUserDataModelTests.m */; };
 		0083B7FD19B4F80A007F254F /* LFLatLongUpdateServiceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0083B7FC19B4F80A007F254F /* LFLatLongUpdateServiceHelper.m */; };
 		00E0516819B1DE2400F4D98D /* LFWebServiceClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E0516719B1DE2400F4D98D /* LFWebServiceClient.m */; };
+		4C52054819B5DAB10023ADC7 /* NSDate+TimeAgo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C52054719B5DAB10023ADC7 /* NSDate+TimeAgo.m */; };
+		4C52054A19B5DCA50023ADC7 /* NSDateTimeAgo.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4C52054919B5DCA50023ADC7 /* NSDateTimeAgo.bundle */; };
+		4C52054D19B5E19A0023ADC7 /* LFAppUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C52054C19B5E19A0023ADC7 /* LFAppUtils.m */; };
+		4CC52D5619B594A500C9B64D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CC52D5419B594A500C9B64D /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +61,6 @@
 		000A33DC19B19D030081182C /* LocationFetchPOC-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LocationFetchPOC-Prefix.pch"; sourceTree = "<group>"; };
 		000A33DD19B19D030081182C /* LFAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFAppDelegate.h; sourceTree = "<group>"; };
 		000A33DE19B19D030081182C /* LFAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFAppDelegate.m; sourceTree = "<group>"; };
-		000A33E119B19D030081182C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		000A33E619B19D030081182C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		000A33EC19B19D030081182C /* LocationFetchPOCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocationFetchPOCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		000A33ED19B19D030081182C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -95,6 +97,12 @@
 		0083B7FC19B4F80A007F254F /* LFLatLongUpdateServiceHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFLatLongUpdateServiceHelper.m; sourceTree = "<group>"; };
 		00E0516619B1DE2400F4D98D /* LFWebServiceClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFWebServiceClient.h; sourceTree = "<group>"; };
 		00E0516719B1DE2400F4D98D /* LFWebServiceClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFWebServiceClient.m; sourceTree = "<group>"; };
+		4C52054619B5DAB10023ADC7 /* NSDate+TimeAgo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+TimeAgo.h"; sourceTree = "<group>"; };
+		4C52054719B5DAB10023ADC7 /* NSDate+TimeAgo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+TimeAgo.m"; sourceTree = "<group>"; };
+		4C52054919B5DCA50023ADC7 /* NSDateTimeAgo.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = NSDateTimeAgo.bundle; sourceTree = "<group>"; };
+		4C52054B19B5E19A0023ADC7 /* LFAppUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFAppUtils.h; sourceTree = "<group>"; };
+		4C52054C19B5E19A0023ADC7 /* LFAppUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFAppUtils.m; sourceTree = "<group>"; };
+		4CC52D5519B594A500C9B64D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LocationFetchPOC/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,7 +219,7 @@
 		000A340619B19D660081182C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				000A33E019B19D030081182C /* Main.storyboard */,
+				4CC52D5419B594A500C9B64D /* Main.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -230,6 +238,7 @@
 		000A340C19B19ECB0081182C /* ThirdPartyFrameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4C52054519B5DAB10023ADC7 /* RelativeTime */,
 				0083B7D919B4DFED007F254F /* AFNetworking */,
 			);
 			path = ThirdPartyFrameworks;
@@ -239,6 +248,8 @@
 			isa = PBXGroup;
 			children = (
 				000A341119B19F4A0081182C /* LFAppConstatnts.h */,
+				4C52054B19B5E19A0023ADC7 /* LFAppUtils.h */,
+				4C52054C19B5E19A0023ADC7 /* LFAppUtils.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -285,6 +296,16 @@
 				00E0516719B1DE2400F4D98D /* LFWebServiceClient.m */,
 			);
 			path = WebserviceClient;
+			sourceTree = "<group>";
+		};
+		4C52054519B5DAB10023ADC7 /* RelativeTime */ = {
+			isa = PBXGroup;
+			children = (
+				4C52054919B5DCA50023ADC7 /* NSDateTimeAgo.bundle */,
+				4C52054619B5DAB10023ADC7 /* NSDate+TimeAgo.h */,
+				4C52054719B5DAB10023ADC7 /* NSDate+TimeAgo.m */,
+			);
+			path = RelativeTime;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -364,9 +385,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CC52D5619B594A500C9B64D /* Main.storyboard in Resources */,
+				4C52054A19B5DCA50023ADC7 /* NSDateTimeAgo.bundle in Resources */,
 				000A33E719B19D030081182C /* Images.xcassets in Resources */,
 				000A33D919B19D030081182C /* InfoPlist.strings in Resources */,
-				000A33E219B19D030081182C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,6 +411,7 @@
 				0083B7ED19B4DFED007F254F /* AFHTTPRequestOperation.m in Sources */,
 				0083B7F019B4DFED007F254F /* AFNetworkReachabilityManager.m in Sources */,
 				0083B7F519B4DFED007F254F /* AFURLSessionManager.m in Sources */,
+				4C52054D19B5E19A0023ADC7 /* LFAppUtils.m in Sources */,
 				0083B7F319B4DFED007F254F /* AFURLRequestSerialization.m in Sources */,
 				000A340B19B19EA60081182C /* LFUserDataModel.m in Sources */,
 				0083B7F419B4DFED007F254F /* AFURLResponseSerialization.m in Sources */,
@@ -396,6 +419,7 @@
 				00E0516819B1DE2400F4D98D /* LFWebServiceClient.m in Sources */,
 				0083B7EE19B4DFED007F254F /* AFHTTPRequestOperationManager.m in Sources */,
 				0083B7F119B4DFED007F254F /* AFSecurityPolicy.m in Sources */,
+				4C52054819B5DAB10023ADC7 /* NSDate+TimeAgo.m in Sources */,
 				000A33DB19B19D030081182C /* main.m in Sources */,
 				000A340819B19D660081182C /* LFViewController.m in Sources */,
 				0083B7FD19B4F80A007F254F /* LFLatLongUpdateServiceHelper.m in Sources */,
@@ -431,21 +455,20 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		000A33E019B19D030081182C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				000A33E119B19D030081182C /* Base */,
-			);
-			name = Main.storyboard;
-			path = ..;
-			sourceTree = "<group>";
-		};
 		000A33F619B19D030081182C /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				000A33F719B19D030081182C /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4CC52D5419B594A500C9B64D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4CC52D5519B594A500C9B64D /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

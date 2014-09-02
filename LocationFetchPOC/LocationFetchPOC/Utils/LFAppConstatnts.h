@@ -16,6 +16,8 @@
 #define NAME_KEY @"name"
 #define LATITUDE_KEY @"latitude"
 #define LONGITUDE_KEY @"logitude"
+#define LAST_UPDATED_TIMESTAMP_KEY @"lastUpdatedTimestamp"
+
 
 // webservice related constants
 #define LAT_LONG_POST_URL @"http://gentle-tor-1851.herokuapp.com/events"
@@ -29,4 +31,11 @@
 //Notification related constants
 #define LAT_LONG_UPDATE_SUCCESS_NOTIFICATION @"LAT_LONG_SERVICE_SUCCESS_NOTIFICATION"
 #define LAT_LONG_UPDATE_ERROR_NOTIFICATION @"LAT_LONG_UPDATE_ERROR_NOTIFICATION"
+
+
+//service response constants
+#define NO_INTERNET_CONNECTION_ERROR @"Please check your internet connectivity and try again."
+#define TIME_OUT_ERROR @"Service time out .Please try again."
+#define UNKNOWN_ERROR @"Something went wrong while updating to server.Please try again"
+
 #endif

@@ -42,4 +42,13 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
+
++(NSDate*)getLastUpdatedTimestamp{
+    return [[NSUserDefaults standardUserDefaults] objectForKey:LAST_UPDATED_TIMESTAMP_KEY];
+}
+
++(void)setLastUpdatedTimestamp:(NSDate*)passonLastUpdatedTimestamp{
+    [[NSUserDefaults standardUserDefaults]  setObject:passonLastUpdatedTimestamp forKey:LAST_UPDATED_TIMESTAMP_KEY];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
 @end

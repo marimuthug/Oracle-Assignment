@@ -52,4 +52,18 @@
  */
 +(void)setLongitude:(NSString*)passonLongValue;
 
+
+/*
+ Desc   : method to get the value from the user detaults for the last updated timestamp key
+ Args   : NA
+ Return : Last updated timestamp value as NSDate
+ */
++(NSDate*)getLastUpdatedTimestamp;
+
+/*
+ Desc   : method to set the passon value to the user detaults for the last updated timestamp key
+ Args   : last updatedTimestamp as NSDate
+ Return : NA
+ */
++(void)setLastUpdatedTimestamp:(NSDate*)passonLastUpdatedTimestamp;
 @end

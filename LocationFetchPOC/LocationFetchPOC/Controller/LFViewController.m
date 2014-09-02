@@ -9,6 +9,8 @@
 #import "LFViewController.h"
 #import "LFLatLongUpdateServiceHelper.h"
 #import "LFUserDataModel.h"
+#import "NSDate+TimeAgo.h"
+#import "LFAppUtils.h"
 
 
 @interface LFViewController ()
@@ -20,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *locationValueLabel;
 
 @property (strong, nonatomic) CLLocationManager *locationManager;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *serviceActivityIndicator;
 
 - (IBAction)btnActionSubmit:(id)sender;
 
@@ -31,7 +34,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+
     
     // adding observer for lat long update success and error
     
@@ -61,6 +64,7 @@
 }
 
 -(void)dealloc {
+    // remove observers for notification
     [[NSNotificationCenter defaultCenter] removeObserver:self name:LAT_LONG_UPDATE_SUCCESS_NOTIFICATION object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:LAT_LONG_UPDATE_ERROR_NOTIFICATION object:nil];
 }
@@ -95,6 +99,9 @@
     // start loction service to fetch the location data
     [self requestForCurrentLocation];
     
+    [self.serviceActivityIndicator startAnimating];
+
+    
 }
 
 
@@ -105,6 +112,15 @@
     self.locationManager.distanceFilter = kCLDistanceFilterNone;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     [self.locationManager startUpdatingLocation];
+    
+}
+
+// method to update last updated label for every second
+-(void)updateLastUpdatedLabel:(NSTimer *)timer{
+    if ([LFUserDataModel getLastUpdatedTimestamp]) {
+        NSString *ago = [[LFUserDataModel getLastUpdatedTimestamp] timeAgo];
+        [self.lastUpdatedLabel setText:[NSString stringWithFormat:@"%@",ago]];
+    }
     
 }
 
@@ -156,16 +172,60 @@
     [self.nameTxtField resignFirstResponder];
     
     // do update lat long in server
-    [LFLatLongUpdateServiceHelper updateLatAndLongInService];
+    [LFLatLongUpdateServiceHelper updateLatAndLongInServer];
+    
+    //start activity indicator
+    [self.serviceActivityIndicator setHidden:NO];
+    [self.serviceActivityIndicator startAnimating];
 }
 
 
 #pragma mark service response notification handler methods
 -(void)handleSuccessUpdate:(NSNotification*)notification{
-    [self.lastUpdatedLabel setText:[NSString stringWithFormat:@"%@",[NSDate date]]];
+    
+    // update current time stamp as recent update and save it in userdefaults
+    NSDate *currentDate = [NSDate date];
+    [LFUserDataModel setLastUpdatedTimestamp:currentDate];
+    
+    //calculate relative time
+    NSString *relativeTime = [[LFUserDataModel getLastUpdatedTimestamp] timeAgo];
+    
+    // update the UI and present to user
+    [self.lastUpdatedLabel setText:[NSString stringWithFormat:@"%@",relativeTime]];
+    [self.lastUpdatedLabel setHidden:NO];
+
+    // trigger updateing label once per second
+    [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateLastUpdatedLabel:) userInfo:nil repeats:YES];
+    
+    //stop activity indicator
+    [self.serviceActivityIndicator setHidden:YES];
+    [self.serviceActivityIndicator stopAnimating];
+    
 }
 
 -(void)handleErrorUpdate:(NSNotification*)notification{
     
+    NSDictionary *userInfo = notification.userInfo;
+    NSError *error = [userInfo objectForKey:@"responseError"];
+    
+    
+    //parse error
+    NSString *messgae = [LFAppUtils errorDescription:error];
+    
+    // alert user
+    
+    UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@""
+                                                         message:messgae
+                                                        delegate:nil
+                                               cancelButtonTitle:@"Ok"
+                                               otherButtonTitles:nil, nil];
+    [errorAlert show];
+    
+    //stop activity indicator
+    [self.serviceActivityIndicator setHidden:YES];
+    [self.serviceActivityIndicator stopAnimating];
+    
 }
+
+
 @end
