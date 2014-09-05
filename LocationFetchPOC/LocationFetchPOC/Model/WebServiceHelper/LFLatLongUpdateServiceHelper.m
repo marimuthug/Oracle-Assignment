@@ -22,7 +22,7 @@
         
         // prepare parameters for the service request
         NSDictionary *serviceParamList = @{LAT_LONG_POST_URL_PAYLOAD_KEY: [NSString stringWithFormat:LAT_LONG_POST_URL_PAYLOAD_VALUE,[LFUserDataModel getName],latitude,longitude]};
-        
+        NSLog(@"Params Dict ==> %@",serviceParamList);
         __block NSMutableDictionary* userInfoDict = [[NSMutableDictionary alloc] init];
         
         // make service call and handle response

@@ -8,4 +8,8 @@
 
 "NO_INTERNET_CONNECTION_ERROR" = "Please check your internet connectivity and try again.";
 "TIME_OUT_ERROR" = "Service time out .Please try again.";
-"UNKNOWN_ERROR" = "Something went wrong while updating to server.Please try again";
+"UNKNOWN_ERROR" = "Something went wrong while updating to server.Please try again.";
+"NAME_FIELD_EMPTY_MESSAGE" = "Name field is empty. Do you wish to submit your location with default name (John Doe) value?.";
+"ALERT_OK_BUTTON_TITLE" = "Ok";
+"ALERT_YES_BUTTON_TITLE" = "Yes";
+"ALERT_NO_BUTTON_TITLE" = "No";

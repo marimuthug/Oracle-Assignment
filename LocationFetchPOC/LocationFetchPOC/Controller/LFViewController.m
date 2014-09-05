@@ -11,6 +11,7 @@
 #import "LFUserDataModel.h"
 #import "NSDate+TimeAgo.h"
 
+#define NAME_VALIDATION_ERROR_ALERT 1000
 
 @interface LFViewController ()
 
@@ -21,7 +22,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *locationValueLabel;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *serviceActivityIndicator;
 @property (weak, nonatomic) IBOutlet UIButton *submitBtn;
-
+@property (strong, nonatomic) UIAlertView *nameValidationErrorAlert;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 
 
@@ -123,11 +124,19 @@
 // method to update entered name value in user default
 -(void)updateNameValueinUserDataModel:(NSString*)nameValue{
     NSString *extractedNameValue = [nameValue stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    if([extractedNameValue length] > 0){
-        [LFUserDataModel setName:extractedNameValue];
-    }
-    
+    [LFUserDataModel setName:extractedNameValue];    
 }
+
+// method call to update lat/long and name value in server
+-(void)doUpdateLatlongInserver{
+    
+    // do update lat and long in server
+    [LFLatLongUpdateServiceHelper updateLatAndLongInServer];
+    
+    [self.serviceActivityIndicator startAnimating];
+    [self.submitBtn setEnabled:NO];
+}
+
 
 #pragma mark Location Manager Delegate
 
@@ -142,12 +151,17 @@
     [LFUserDataModel setLongitude:[NSString stringWithFormat:@"%f",currentLocation.coordinate.longitude]];
     
     if (![[NSUserDefaults standardUserDefaults] boolForKey:FIRST_LAT_LON_UPDATE_DONE]) {
-        // do update lat and long in server
-        [LFLatLongUpdateServiceHelper updateLatAndLongInServer];
+        if ([[LFUserDataModel getName] length] > 0) {
+            [self.submitBtn setEnabled:NO];
+            [self doUpdateLatlongInserver];
+            
+        }
+        else{
+            [self.submitBtn setEnabled:YES];
+            [self showNameValidationErrorAlert];
+        }
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:FIRST_LAT_LON_UPDATE_DONE];
-        
-        [self.serviceActivityIndicator startAnimating];
-        [self.submitBtn setEnabled:NO];
+
     }
 }
 
@@ -180,11 +194,13 @@
 }
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
+    
     if ([string length]>0) {
         [self updateNameValueinUserDataModel:[[textField text] stringByAppendingString:string]];
     }
     else {
-        [self updateNameValueinUserDataModel:[textField text]];
+        [self updateNameValueinUserDataModel:[textField.text substringWithRange:(NSRange){0, [textField.text length]-1}]];
+        
     }
     
     return YES;
@@ -196,13 +212,19 @@
     
     [self.nameTxtField resignFirstResponder];
     
+    if (!([[LFUserDataModel getName] length] > 0)) {
+        
+        //prompt user for empty name value
+        [self showNameValidationErrorAlert];
+        return;
+    }
+    
     // do update lat long in server
     [LFLatLongUpdateServiceHelper updateLatAndLongInServer];
     
     //start activity indicator
     [self.serviceActivityIndicator startAnimating];
-    [self.submitBtn setEnabled:NO];
-}
+    [self.submitBtn setEnabled:NO];}
 
 
 #pragma mark service response notification handler methods
@@ -236,22 +258,70 @@
     
     
     //parse error
-    NSString *messgae = [LFAppUtils errorDescription:error];
-    
-    // alert user
-    
+    NSString *message = [LFAppUtils errorDescription:error];
+
+
     UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@""
-                                                         message:messgae
-                                                        delegate:nil
-                                               cancelButtonTitle:@"Ok"
-                                               otherButtonTitles:nil, nil];
+                                                message:message
+                                               delegate:nil
+                                               cancelButtonTitle:NSLocalizedString(ALERT_OK_BUTTON_TITLE,
+                                                                                   nil)
+                                      otherButtonTitles:nil, nil];
     [errorAlert show];
     
+
     //stop activity indicator
     [self.serviceActivityIndicator stopAnimating];
     [self.submitBtn setEnabled:YES];
     
 }
 
+
+#pragma mark Alertview display and delegate method
+
+-(void)showNameValidationErrorAlert{
+    
+    // alert user
+    
+    if (!self.nameValidationErrorAlert) {
+        self.nameValidationErrorAlert =  [[UIAlertView alloc] initWithTitle:@""
+                                                                    message:NSLocalizedString(NAME_FIELD_EMPTY_MESSAGE,
+                                                                                              nil)
+                                                                   delegate:self
+                                                          cancelButtonTitle:NSLocalizedString(ALERT_NO_BUTTON_TITLE,
+                                                                                               nil)
+                                                          otherButtonTitles:NSLocalizedString(ALERT_YES_BUTTON_TITLE,
+                                                                                              nil), nil];
+    }
+    
+    
+    [self.nameValidationErrorAlert setTag:NAME_VALIDATION_ERROR_ALERT];
+    if (!self.nameValidationErrorAlert.visible) {
+        [self.nameValidationErrorAlert show];
+    }
+
+
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+ 
+    switch ([alertView tag]) {
+        case NAME_VALIDATION_ERROR_ALERT:
+            if (buttonIndex == 0) {
+              // do nothing
+            }
+            else{
+                //update default name vaue in textfield , data model
+                [self.nameTxtField setText:DEFAULT_NAME_VALUE];
+                [LFUserDataModel setName:DEFAULT_NAME_VALUE];
+                
+                [self doUpdateLatlongInserver];
+            }
+            break;
+            
+        default:
+            break;
+    }
+}
 
 @end
